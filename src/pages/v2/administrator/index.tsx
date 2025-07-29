@@ -43,7 +43,7 @@ export default function AdminLoginPage() {
 
     try {
       // Fazer chamada para a API de login
-      const response = await fetch('https://api.raspadinhaoficial.com.br/v1/api/auth/login', {
+      const response = await fetch('https://raspenahora.site/v1/api/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

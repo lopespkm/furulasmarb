@@ -69,8 +69,8 @@ const InventoryPage: React.FC = () => {
   const fixImageUrl = (url: string | null): string | null => {
     if (!url) return null;
     
-    // Trocar raspa.ae por api.raspadinhaoficial.com.br
-    let fixedUrl = url.replace('https://raspa.ae/', 'https://api.raspadinhaoficial.com.br/');
+    // Trocar raspa.ae por raspenahora.site
+    let fixedUrl = url.replace('https://raspa.ae/', 'https://raspenahora.site/');
     
     // Remover 'prizes/' e 'scratchcards/' após 'uploads/'
     fixedUrl = fixedUrl.replace('/uploads/prizes/', '/uploads/');
@@ -101,7 +101,7 @@ const InventoryPage: React.FC = () => {
 
     try {
       setLoading(true);
-      const response = await fetch('https://api.raspadinhaoficial.com.br/v1/api/users/redemptions/pending', {
+      const response = await fetch('https://raspenahora.site/v1/api/users/redemptions/pending', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -136,7 +136,7 @@ const InventoryPage: React.FC = () => {
     }
 
     try {
-      const response = await fetch('https://api.raspadinhaoficial.com.br/v1/api/users/redemptions/choose', {
+      const response = await fetch('https://raspenahora.site/v1/api/users/redemptions/choose', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,

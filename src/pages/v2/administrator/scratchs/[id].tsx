@@ -106,8 +106,8 @@ const formatPercentage = (value: string | number) => {
 const fixImageUrl = (url: string | null) => {
   if (!url) return null;
   
-  // Trocar raspa.ae por api.raspadinhaoficial.com.br
-  let fixedUrl = url.replace('https://raspa.ae/', 'https://api.raspadinhaoficial.com.br/');
+  // Trocar raspa.ae por raspenahora.site
+  let fixedUrl = url.replace('https://raspa.ae/', 'https://raspenahora.site/');
   
   // Remover 'prizes/' e 'scratchcards/' após 'uploads/'
   fixedUrl = fixedUrl.replace('/uploads/prizes/', '/uploads/');
@@ -147,7 +147,7 @@ export default function ScratchCardDetailsPage() {
       setLoading(true);
       setError(null);
       
-      const response = await fetch(`https://api.raspadinhaoficial.com.br/v1/api/scratchcards/${id}`, {
+      const response = await fetch(`https://raspenahora.site/v1/api/scratchcards/${id}`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -227,7 +227,7 @@ export default function ScratchCardDetailsPage() {
     setEditError('');
     
     try {
-      const response = await fetch(`https://api.raspadinhaoficial.com.br/v1/api/scratchcards/admin/${scratchCard.id}`, {
+      const response = await fetch(`https://raspenahora.site/v1/api/scratchcards/admin/${scratchCard.id}`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`,

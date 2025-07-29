@@ -167,7 +167,7 @@ const ScratchCardPage = () => {
   const fixImageUrl = (url: string) => {
     if (!url) return '';
     return url
-      .replace('raspa.ae', 'api.raspadinhaoficial.com.br')
+      .replace('raspa.ae', 'raspenahora.site')
       .replace('/uploads/scratchcards/', '/uploads/')
       .replace('/uploads/prizes/', '/uploads/');
   };
@@ -178,7 +178,7 @@ const ScratchCardPage = () => {
     
     try {
       setLoading(true);
-      const response = await fetch(`https://api.raspadinhaoficial.com.br/v1/api/scratchcards/${id}`);
+      const response = await fetch(`https://raspenahora.site/v1/api/scratchcards/${id}`);
       const data: ApiResponse = await response.json();
       
       if (data.success) {
@@ -383,7 +383,7 @@ const ScratchCardPage = () => {
     
     try {
       setPlayingGame(true);
-      const response = await fetch('https://api.raspadinhaoficial.com.br/v1/api/scratchcards/play', {
+      const response = await fetch('https://raspenahora.site/v1/api/scratchcards/play', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -414,7 +414,7 @@ const ScratchCardPage = () => {
     if (!token) return;
     
     try {
-      const response = await fetch('https://api.raspadinhaoficial.com.br/v1/api/users/profile', {
+      const response = await fetch('https://raspenahora.site/v1/api/users/profile', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
