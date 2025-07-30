@@ -112,7 +112,7 @@ export default function Home() {
   const fixImageUrl = (url: string) => {
     if (!url) return '';
     return url
-      .replace('raspa.ae', 'raspenahora.site')
+      .replace('raspa.ae', 'api.raspenahora.site')
       .replace('/uploads/scratchcards/', '/uploads/')
       .replace('/uploads/prizes/', '/uploads/');
   };
@@ -121,7 +121,7 @@ export default function Home() {
   const fetchScratchCards = async () => {
     try {
       setLoading(true);
-      const response = await fetch('https://raspenahora.site/v1/api/scratchcards');
+      const response = await fetch('https://api.raspenahora.site/v1/api/scratchcards');
       const data: ApiResponse = await response.json();
       
       if (data.success) {
@@ -185,7 +185,7 @@ export default function Home() {
     const fetchBanners = async () => {
       setBannersLoading(true);
       try {
-        const response = await fetch('https://raspenahora.site/v1/api/setting');
+        const response = await fetch('https://api.raspenahora.site/v1/api/setting');
         const data = await response.json();
         if (response.ok && data.data && data.data[0]) {
           const s = data.data[0];

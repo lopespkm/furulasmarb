@@ -167,7 +167,7 @@ export default function CreateScratchCard() {
         }))
       };
       
-      const response = await fetch('https://raspenahora.site/v1/api/scratchcards/admin/create', {
+      const response = await fetch('https://api.raspenahora.site/v1/api/scratchcards/admin/create', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,

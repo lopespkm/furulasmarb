@@ -73,7 +73,7 @@ export default function Page() {
       if (!token) return;
       
       try {
-        const response = await fetch('https://raspenahora.site/v1/api/admin/stats', {
+        const response = await fetch('https://api.raspenahora.site/v1/api/admin/stats', {
           headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json',
